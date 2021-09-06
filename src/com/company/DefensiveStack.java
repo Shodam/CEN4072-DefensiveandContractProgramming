@@ -1,4 +1,26 @@
 package com.company;
 
 public class DefensiveStack {
+
+    private final int CAPACITY = 5;
+    private int size;
+    private int[] stack;
+
+    public DefensiveStack() {
+        stack = new int[CAPACITY];
+        size = 0;
+    }
+
+    public void push(int x) {
+        stack[size] = x;
+        ++size;
+    }
+
+    public void pop() {
+        --size;
+    }
+
+    public int peek() {
+        return stack[size - 1];
+    }
 }
