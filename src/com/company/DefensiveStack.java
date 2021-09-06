@@ -1,26 +1,33 @@
 package com.company;
 
-public class DefensiveStack {
+import java.util.*;
 
-    private final int CAPACITY = 5;
-    private int size;
-    private int[] stack;
-
+public class DefensiveStack
+{
+    private Stack<Integer> stack;
+    
     public DefensiveStack() {
-        stack = new int[CAPACITY];
-        size = 0;
+        stack = new Stack<Integer>();
+    }
+    
+    public void stack_push(int x)
+    {
+        stack.push(x);
     }
 
-    public void push(int x) {
-        stack[size] = x;
-        ++size;
+    public void stack_pop()
+    {
+        stack.pop();
     }
 
-    public void pop() {
-        --size;
+    public int stack_peek()
+    {
+        return stack.peek();
     }
 
-    public int peek() {
-        return stack[size - 1];
+    public int stack_search(int element)
+    {
+        return stack.search(element);
     }
+
 }
