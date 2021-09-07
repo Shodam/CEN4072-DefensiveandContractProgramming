@@ -34,6 +34,8 @@ public class ContractTester
       else {
         System.out.println("Invalid Choice");
       }
+      
+    }
     
     
     
