@@ -6,51 +6,79 @@ import java.util.Stack;
 
 public class ContractStack<I extends Number> {
   
-  private static int size;
   private static Stack <Integer> stack;
   
-  static void stack_push(Stack <Integer> stack)
+  
+  public ContractStack()
+  {
+    
+    stack = new Stack <Integer>();
+    
+  }
+  
+  
+  
+  static void stack_push(int element)
   {
     //stack.push();
     //need to check preconditions are met
-    if (size >= 5)
+    if (stack.size() >= 5)
     {
-      //Can not push into stack
+      //Can not push into stack, stack at max capacity
+      exit(0);
+      
+    }
+    
+    if (element = NULL)
+    {
+      System.out.println("This element does not meet the precondition");
       exit(0);
     }
-    for (int i = 0; i < size; i++)
+     
+    if (element % 2 != 0)
     {
-      if (stack.get(i) = NULL)
-      {
-        System.out.println("An element in the does not meet the precondition");
-        exit(0);
-      }
+      System.out.println("This does not meet the precondition");
+      exit(0);
     }
-    stack.push();
-    size++;
+    
+    if (element <= 0)
+    {
+      System.out.println("This does not meet the precondition");
+      exit(0);
+    }
+    stack.push(element);
+    
   }
   
-  static void stack_pop(Stack <Integer> stack)
+  
+  
+  static void stack_pop()
   {
-    if (size <= 0){
+    if (stack.size() <= 0)
+    {
       
+      System.out.println("The stack is empty");
       exit(0);
       
     }
-    size--;
+    
     stack.pop();
     
   }
   
-  static void stack_peek(Stack <Integer> stack)
+  
+  
+  static void stack_peek()
   {
-    if (size <= 0) {
+    if (stack.size() <= 0) {
       
       exit(0);
       
     }
     stack.peek();
   }
+  
+  
   
   static void stack_search(int element)
   {
