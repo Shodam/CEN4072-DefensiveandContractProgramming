@@ -5,61 +5,64 @@ import java.util.EmptyStackException;
 
 public class DefensiveStack
 {
-	private final int CAPACITY = 5;
-    private int size;
+    private final int CAPACITY = 5;
     private Stack<Integer> stack;
-    
+
     public DefensiveStack() {
         stack = new Stack<Integer>();
-        size = 0;
     }
-    
+
     /**
      * Precondition: Stack must not be at capacity
-     * Precondition: must push an Integer to the stack
      * Postcondition: The integer x is added to the top of the stack
+     * Postcondition: The size of the stack is increased by one
      */
-    public void stack_push(Integer x)
+    public void stack_push(int x)
     {
-    	if(size >= CAPACITY) {
-    		throw new IndexOutOfBoundsException("Capacity of Stack is " + CAPACITY);
-    	}
-    	if(x == null) {
-    		throw new IllegalArgumentException("Integer cannot be null");
-    	}
-        
-    	++size;
-    	stack.push(x);
+        if(stack.size() >= CAPACITY) {
+            throw new IndexOutOfBoundsException("Capacity of Stack is " + CAPACITY);
+        }
+
+        stack.push(x);
     }
 
     /**
      * Precondition: Stack must not be empty
+     * Postcondition: The element at the top the of stack is removed
+     * Postcondition: The size of the stack is decreased by one
      */
     public void stack_pop()
     {//should pop return popped value
-    	if(size <= 0) {
-    		throw new EmptyStackException();
-    	}
-    	
-    	--size;
+        if(stack.size() <= 0) {
+            throw new EmptyStackException();
+        }
+
         stack.pop();
     }
 
     /**
      * Precondition: Stack must not be empty
-     * @return the Integer at the top of the Stack
+     * PostCondition: Stack remains unmodified
      */
     public int stack_peek()
     {
-    	if(size <= 0) {
-    		throw new EmptyStackException();
-    	}
-    	
+        if(stack.size() <= 0) {
+            throw new EmptyStackException();
+        }
+
         return stack.peek();
     }
 
+    /**
+     * Precondition: Stack must not be empty
+     * PostCondition: Stack remains unmodified
+     */
     public int stack_search(int element)
     {
+        if(stack.size() <= 0) {
+            throw new EmptyStackException();
+        }
+
         return stack.search(element);
     }
 
