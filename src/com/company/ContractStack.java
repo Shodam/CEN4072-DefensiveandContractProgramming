@@ -3,13 +3,12 @@ package com.company;
 import java.io.*;
 import java.util.*;
 
-public class ContractStack
-{
-  private int size;
+public class ContractStack<I extends Number> {
+  private static int size;
   
   static void stack_push(Stack <Integer> stack)
   {
-    stack.push();
+    //stack.push();
     size++;
   }
   
