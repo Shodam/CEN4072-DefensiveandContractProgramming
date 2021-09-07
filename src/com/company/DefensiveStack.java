@@ -19,11 +19,16 @@ public class DefensiveStack
      * Precondition: must push an Integer to the stack
      * Postcondition: The integer x is added to the top of the stack
      */
-    public void stack_push(int x)
+    public void stack_push(Integer x)
     {
-    	if(size < CAPACITY)
+    	if(size >= CAPACITY) {
     		throw new IndexOutOfBoundsException("Capacity of Stack is " + CAPACITY);
+    	}
+    	if(x == null) {
+    		throw new IllegalArgumentException("Integer cannot be null");
+    	}
         
+    	++size;
     	stack.push(x);
     }
 
@@ -31,18 +36,25 @@ public class DefensiveStack
      * Precondition: Stack must not be empty
      */
     public void stack_pop()
-    {
-    	if(size > 0)
+    {//should pop return popped value
+    	if(size <= 0) {
     		throw new EmptyStackException();
+    	}
     	
+    	--size;
         stack.pop();
     }
 
     /**
+     * Precondition: Stack must not be empty
      * @return the Integer at the top of the Stack
      */
     public int stack_peek()
     {
+    	if(size <= 0) {
+    		throw new EmptyStackException();
+    	}
+    	
         return stack.peek();
     }
 
