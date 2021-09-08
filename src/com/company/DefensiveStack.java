@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.Stack;
-import java.util.EmptyStackException;
 
 public class DefensiveStack
 {
@@ -13,37 +12,46 @@ public class DefensiveStack
     }
 
     /**
-     * Precondition: Stack must not be at capacity
-     * Postcondition: The integer x is added to the top of the stack
-     * Postcondition: The size of the stack is increased by one
+     * Adds an int to the top of the stack
+     * @param x The integer to be pushed
+     * @return -1 if failed, the passed arguments otherwise
+     * Precondition: an integer must be passed as an argument
+     * Postcondition: The stack is not at capacity
+     * Postcondition: x cannot be negative
+     * Postcondition: returns an int
      */
-    public void stack_push(int x)
+    public int stack_push(int x)
     {
-        if(stack.size() >= CAPACITY) {
-            throw new IndexOutOfBoundsException("Capacity of Stack is " + CAPACITY);
+    	//Checks for nonegative integer
+    	//Checks stack is not at capacity
+        if(stack.size() >= CAPACITY || x < 0) {
+            return -1;
         }
 
-        stack.push(x);
+        return stack.push(x);
     }
 
     /**
-     * Precondition: Stack must not be empty
-     * Postcondition: The element at the top the of stack is removed
-     * Postcondition: The size of the stack is decreased by one
+     * Removes integer at the top of 
+     * @return -1 if failed, the popped value otherwise
+     * Postcondition: returns an int
+     * Postcondition: Will not attempt to pop an empty stack
      */
-    public void stack_pop()
+    public int stack_pop()
     {
-        if(stack.size() > 0) {
-            stack.pop();
+        if(stack.size() <= 0) {
+            return -1;
         }
 
-        System.out.println("Stack empty, cannot pop.");
+        return stack.pop();
 
     }
 
     /**
-     * Precondition: Stack must not be empty
-     * PostCondition: Stack remains unmodified
+     * Gets the value at the top of the stack
+     * @return -1 if failed, the top of the stack otherwise
+     * Postcondition returns an int
+     * Postcondition will not peek an empty stack
      */
     public int stack_peek()
     {
@@ -55,8 +63,9 @@ public class DefensiveStack
     }
 
     /**
-     * Precondition: Stack must not be empty
-     * PostCondition: Stack remains unmodified
+     * Gets the index of a an element
+     * @param element the int to search for
+     * @return -1 if failed, the index of the element otherwise
      */
     public int stack_search(int element)
     {

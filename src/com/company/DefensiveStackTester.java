@@ -37,13 +37,24 @@ public class DefensiveStackTester {
                         userActive = false;
                     }else if (userInput.equalsIgnoreCase(removeCommand))
                     {//pops from the top of stack
-                    	stackNumber = stack.stack_peek();
-                        stack.stack_pop();
+                    	int x = stack.stack_pop();
+                        if(x < 0)
+                        {
+                        	System.out.println("Top value could not be pop");
+                        }else {
+                        	System.out.println("removed value " + x);
+                        }
                         System.out.println("\n");
                     }
                     else if (userInput.equalsIgnoreCase(peekCommand))
                     {//peek on the top of the stack
-                    	System.out.println(stack.stack_peek() + " is at the top of the stack");
+                    	int x = stack.stack_peek();
+                    	if(x != -1)
+                    	{
+                    		System.out.println(stack.stack_peek() + " is at the top of the stack");
+                    	}else {
+                    		System.out.println("The stack is empty");
+                    	}
                     }
                 } else if (userInput.equalsIgnoreCase(searchCommand))
                 {//searches for an int in the stack
@@ -53,14 +64,21 @@ public class DefensiveStackTester {
                     userPeek = stack.stack_search(stackNumber);
                     if (userPeek > 0)
                     {
-                        System.out.println(stackNumber + " is in the stack");
+                        System.out.println(stackNumber + " is in the stack at position " + userPeek);
+                    }else {
+                    	System.out.println(stackNumber + "could not be found in the stack");
                     }
                 }
                 else if (intChecker.hasNextInt())
                 {//Pushes user input to stack
                     stackNumber = Integer.parseInt(userInput);
-                    stack.stack_push(stackNumber);
-                    System.out.println(stackNumber + " is now in the stack");
+                    int x = stack.stack_push(stackNumber);
+                    if(x == -1)
+                    {
+                    	System.out.println(stackNumber + " could not be added");
+                    }else {
+                        System.out.println(stackNumber + " is now in the stack");
+                    }
                     
 
                 } else
