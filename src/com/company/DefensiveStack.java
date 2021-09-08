@@ -33,11 +33,12 @@ public class DefensiveStack
      */
     public void stack_pop()
     {
-        if(stack.size() <= 0) {
-            throw new EmptyStackException();
+        if(stack.size() > 0) {
+            stack.pop();
         }
 
-        stack.pop();
+        System.out.println("Stack empty, cannot pop.");
+
     }
 
     /**
@@ -47,7 +48,7 @@ public class DefensiveStack
     public int stack_peek()
     {
         if(stack.size() <= 0) {
-            throw new EmptyStackException();
+            return -1;
         }
 
         return stack.peek();
@@ -59,10 +60,6 @@ public class DefensiveStack
      */
     public int stack_search(int element)
     {
-        if(stack.size() <= 0) {
-            throw new EmptyStackException();
-        }
-
         return stack.search(element);
     }
 
