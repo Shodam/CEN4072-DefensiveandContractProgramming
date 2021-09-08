@@ -69,10 +69,6 @@ public class ContractTester
     stack.stack_print();
     
     
-    
-    
-    //ContractStack <Integer> stack = new ContractStack <Integer>();
-    
   }
   
 }
