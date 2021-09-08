@@ -61,7 +61,8 @@ public class ContractTester
         stack.stack_print();
       }
       
-      else {
+      else 
+      {
         System.out.println("Invalid Choice");
       }
       
