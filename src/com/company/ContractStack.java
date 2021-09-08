@@ -41,10 +41,12 @@ public class ContractStack{
     
     //Post Condition
     //The stack doesnt go over size
-    if (stack.size() >= 5)
+    if (stack.size() > 5)
     {
       //Can not push into stack, stack at max capacity
-      System.out.println("Stack at Max Capacity");
+      System.out.println("Stack is over Max Capacity of 5 elements");
+      stack.pop();
+      System.out.println(stack);
       System.exit(0);
     }
     
