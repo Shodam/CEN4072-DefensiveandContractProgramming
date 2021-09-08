@@ -14,16 +14,17 @@ public class DefensiveStack
 
     /**
      * Precondition: Stack must not be at capacity
+     * Precondition: Int cannot be negative
      * Postcondition: The integer x is added to the top of the stack
      * Postcondition: The size of the stack is increased by one
      */
-    public void stack_push(int x)
+    public int stack_push(int x)
     {
-        if(stack.size() >= CAPACITY) {
-            throw new IndexOutOfBoundsException("Capacity of Stack is " + CAPACITY);
+        if(stack.size() >= CAPACITY || x < 0) {
+            return -1;
         }
 
-        stack.push(x);
+        return stack.push(x);
     }
 
     /**
@@ -31,13 +32,13 @@ public class DefensiveStack
      * Postcondition: The element at the top the of stack is removed
      * Postcondition: The size of the stack is decreased by one
      */
-    public void stack_pop()
+    public int stack_pop()
     {
-        if(stack.size() > 0) {
-            stack.pop();
+        if(stack.size() <= 0) {
+            return -1;
         }
 
-        System.out.println("Stack empty, cannot pop.");
+        return stack.pop();
 
     }
 
