@@ -53,7 +53,7 @@ public class ContractTester
       {
         System.out.print("Enter a value: ");
         userInput = scnr.nextInt();
-        stack.stack_search(userInput);
+        System.out.println(stack.stack_search(userInput));
       }
       
       else if (userInput == 6)
