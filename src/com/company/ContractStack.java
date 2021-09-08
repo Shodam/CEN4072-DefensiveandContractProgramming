@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class ContractStack{
   
-  private static Stack <Integer> stack;
+  private Stack<Integer> stack;
   
   
   public ContractStack()
@@ -16,7 +16,7 @@ public class ContractStack{
   
   
   
-  static void stack_push(int element)
+  public void stack_push(int element)
   {
     //Need to check if preconditions are met  
     if (element % 2 != 0)
@@ -53,7 +53,7 @@ public class ContractStack{
   
   
   
-  static void stack_pop()
+  public void stack_pop()
   {
     if (stack.size() <= 0)
     {
@@ -69,7 +69,7 @@ public class ContractStack{
   
   
   
-  static int stack_peek()
+  public int stack_peek()
   {
     if (stack.size() <= 0) {
       
@@ -84,14 +84,14 @@ public class ContractStack{
   
   
   
-  static int stack_search(int element)
+  public int stack_search(int element)
   {
     
     return stack.search(element);
     
   }
   
-  static void stack_print()
+  public void stack_print()
   {
     
     System.out.println(stack);

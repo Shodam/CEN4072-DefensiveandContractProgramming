@@ -27,49 +27,40 @@ public class ContractTester
       userInput = scnr.nextInt();
       System.out.println();
       
-      if (userInput == 1)
+      switch(userInput)
       {
-        exit = true;
-      }
+      	case 1:
+      		exit = true;
+      		break;
+      	case 2:
+      		System.out.print("Enter a value: ");
+      		userInput = scnr.nextInt();
+        	stack.stack_push(userInput);
+      		break;
+      	case 3:
+      		stack.stack_pop();
+      		break;
+      	case 4:
+      		System.out.println(stack.stack_peek());
+      		break;
+      	case 5:
+      		System.out.print("Enter a value: ");
+            userInput = scnr.nextInt();
+            if (stack.stack_search(userInput) > 0)
+            {
+              System.out.println(userInput + " is in the stack, in position " + stack.stack_search(userInput));
+            }
+      		break;
+      	case 6:
+      		stack.stack_print();
+      		break;
+      	default:
+      		System.out.println("Invalid Choice");
+    		break;
       
-      else if (userInput == 2)
-      {
-        System.out.print("Enter a value: ");
-        userInput = scnr.nextInt();
-        stack.stack_push(userInput);
-      }
-      
-      else if (userInput == 3)
-      {
-        stack.stack_pop();
-      }
-      
-      else if (userInput == 4)
-      {
-        System.out.println(stack.stack_peek());
-      }
-      
-      else if (userInput == 5)
-      {
-        System.out.print("Enter a value: ");
-        userInput = scnr.nextInt();
-        System.out.println("Position #" + stack.stack_search(userInput));
-      }
-      
-      else if (userInput == 6)
-      {
-        stack.stack_print();
-      }
-      
-      else 
-      {
-        System.out.println("Invalid Choice");
-      }
-      
+      }      
     }
-    stack.stack_print();
-    
-    
+    stack.stack_print();    
   }
   
 }
