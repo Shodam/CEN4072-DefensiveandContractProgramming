@@ -25,26 +25,26 @@ public class ContractStack<I extends Number> {
     if (stack.size() >= 5)
     {
       //Can not push into stack, stack at max capacity
-      exit(0);
+      System.exit(0);
       
     }
-    
-    if (element = NULL)
+    /**
+    if (element == null)
     {
       System.out.println("This element does not meet the precondition");
-      exit(0);
+      System.exit(0);
     }
-     
+     */
     if (element % 2 != 0)
     {
       System.out.println("This does not meet the precondition");
-      exit(0);
+      System.exit(0);
     }
     
     if (element <= 0)
     {
       System.out.println("This does not meet the precondition");
-      exit(0);
+      System.exit(0);
     }
     stack.push(element);
     
@@ -58,7 +58,7 @@ public class ContractStack<I extends Number> {
     {
       
       System.out.println("The stack is empty");
-      exit(0);
+      System.exit(0);
       
     }
     
@@ -72,7 +72,7 @@ public class ContractStack<I extends Number> {
   {
     if (stack.size() <= 0) {
       
-      exit(0);
+      System.exit(0);
       
     }
     stack.peek();
