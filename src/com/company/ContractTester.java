@@ -46,7 +46,10 @@ public class ContractTester
       	case 5:
       		System.out.print("Enter a value: ");
             userInput = scnr.nextInt();
-            System.out.println(stack.stack_search(userInput));
+            if (stack.stack_search(userInput) > 0)
+            {
+              System.out.println(userInput + " is in the stack, in position " + stack.stack_search(userInput));
+            }
       		break;
       	case 6:
       		stack.stack_print();
