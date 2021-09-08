@@ -32,7 +32,7 @@ public class DefensiveStack
      * Postcondition: The size of the stack is decreased by one
      */
     public void stack_pop()
-    {//should pop return popped value
+    {
         if(stack.size() <= 0) {
             throw new EmptyStackException();
         }
