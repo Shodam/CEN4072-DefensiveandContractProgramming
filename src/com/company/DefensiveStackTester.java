@@ -78,7 +78,7 @@ public class DefensiveStackTester {
                     	System.out.println(stackNumber + " could not be added");
                     }else {
                         System.out.println(stackNumber + " is now in the stack");
-                    }]
+                    }
                     
 
                 } else
