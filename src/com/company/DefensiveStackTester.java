@@ -1,3 +1,4 @@
+  
 package com.company;
 
 import java.util.Scanner;
@@ -43,7 +44,13 @@ public class DefensiveStackTester {
                     }
                     else if (userInput.equalsIgnoreCase(peekCommand))
                     {//peek on the top of the stack
-                    	System.out.println(stack.stack_peek() + " is at the top of the stack");
+                    	int x = stack.stack_peek();
+                    	if(x != -1)
+                    	{
+                    		System.out.println(stack.stack_peek() + " is at the top of the stack");
+                    	}else {
+                    		System.out.println("The stack is empty");
+                    	}
                     }
                 } else if (userInput.equalsIgnoreCase(searchCommand))
                 {//searches for an int in the stack
@@ -53,7 +60,7 @@ public class DefensiveStackTester {
                     userPeek = stack.stack_search(stackNumber);
                     if (userPeek > 0)
                     {
-                        System.out.println(stackNumber + " is in the stack");
+                        System.out.println(stackNumber + " is in the stack at position " + userPeek);
                     }
                 }
                 else if (intChecker.hasNextInt())
