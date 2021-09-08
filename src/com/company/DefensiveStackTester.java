@@ -87,5 +87,6 @@ public class DefensiveStackTester {
                     System.out.println("\n");
                 }
         }
+        input.close();
     }
 }
