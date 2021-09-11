@@ -71,5 +71,10 @@ public class DefensiveStack
     {
         return stack.search(element);
     }
+    
+    public boolean isFull()
+    {
+    	return (stack.size() >= CAPACITY);
+    }
 
 }
