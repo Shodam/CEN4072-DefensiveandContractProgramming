@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class ContractStack{
   
+  private final int CAPACITY = 5;
   private Stack<Integer> stack;
   
   
@@ -40,8 +41,8 @@ public class ContractStack{
     stack.push(element);
     
     //Post Condition
-    //The stack doesnt go over size
-    if (stack.size() >= 5)
+    //The stack doesn't go over size
+    if (stack.size() >= CAPACITY)
     {
       //Can not push into stack, stack at max capacity
       System.out.println("Stack at Max Capacity");
@@ -99,6 +100,22 @@ public class ContractStack{
     
     System.out.println(stack);
     
+  }
+  public boolean isFull()
+  {
+	  if(stack.size() >= CAPACITY)
+	  {
+		  return true;
+	  }
+	  return false;
+  }
+  public boolean isEmpty()
+  {
+	  if(stack.size() == 0)
+	  {
+		  return true;
+	  }
+	  return false;
   }
 
 }
