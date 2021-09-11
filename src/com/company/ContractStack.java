@@ -18,36 +18,39 @@ public class ContractStack{
   
   public void stack_push(int element)
   {
+	  /*
     //Need to check if preconditions are met
     //Element to push is even
     if (element % 2 != 0)
     {
-      System.out.println("This does not meet the precondition");
+      //System.out.println("This does not meet the precondition");
       System.exit(0);
     }
-    //Greater than 0
-    if (element <= 0)
-    {
-      System.out.println("This does not meet the precondition");
-      System.exit(0);
-    }
+   
     //Less than equal to 8000
     if (element > 8000)
     {
-      System.out.println("This does not meet the precondition");
+      //System.out.println("This does not meet the precondition");
       System.exit(0);
     }
-    
-    stack.push(element);
+    */ 
+	  
+    //Greater than 0
+	if (element <= 0)
+    {
+      //System.out.println("This does not meet the precondition");
+      System.exit(0);
+    }
     
     //Post Condition
     //The stack doesn't go over size
-    if (stack.size() >= CAPACITY)
+    if (stack.size() > CAPACITY)
     {
       //Can not push into stack, stack at max capacity
-      System.out.println("Stack at Max Capacity");
+      //System.out.println("Stack at Max Capacity");
       System.exit(0);
     }
+    stack.push(element);
     
     
     
@@ -61,7 +64,7 @@ public class ContractStack{
     if (stack.size() <= 0)
     {
       
-      System.out.println("The stack is empty");
+      //System.out.println("The stack is empty");
       System.exit(0);
       
     }
@@ -76,9 +79,8 @@ public class ContractStack{
   {
     if (stack.size() <= 0) {
       
-      System.out.println("The stack is empty");
+      //System.out.println("The stack is empty");
       System.exit(0);
-      
     }
     
     return stack.peek();
