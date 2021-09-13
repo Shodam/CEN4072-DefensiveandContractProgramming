@@ -20,12 +20,12 @@ public class DefensiveStack
      * Postcondition: x cannot be negative
      * Postcondition: returns an int
      */
-    public int stack_push(int x)
+    public Integer stack_push(int x)
     {
     	//Checks for nonegative integer
     	//Checks stack is not at capacity
-        if(stack.size() >= CAPACITY || x < 0) {
-            return -1;
+        if(stack.size() >= CAPACITY) {
+            return null;
         }
 
         return stack.push(x);
@@ -37,10 +37,10 @@ public class DefensiveStack
      * Postcondition: returns an int
      * Postcondition: Will not attempt to pop an empty stack
      */
-    public int stack_pop()
+    public Integer stack_pop()
     {
         if(stack.size() <= 0) {
-            return -1;
+            return null;
         }
 
         return stack.pop();
@@ -53,10 +53,10 @@ public class DefensiveStack
      * Postcondition returns an int
      * Postcondition will not peek an empty stack
      */
-    public int stack_peek()
+    public Integer stack_peek()
     {
         if(stack.size() <= 0) {
-            return -1;
+            return null;
         }
 
         return stack.peek();
