@@ -20,7 +20,7 @@ public class ContractStack{
   }
   
   
-  public void stack_push(int element)
+  public void stack_push(int element) throws IOException
   {
     
     stack.push(element);
