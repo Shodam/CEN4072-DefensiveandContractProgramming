@@ -43,27 +43,27 @@ public class ContractTester
           
           
       	case 2:
+	  System.out.print("Enter a value: ");
+      	  userInput = scnr.nextInt();	      
           //Need to check if preconditions are met
           //Element to push is even
-          if (element % 2 != 0)
+          if (userInput % 2 != 0)
           }
               throw new IOException();
           }
           //Less than equal to 8000
-          if (element > 8000)
+          if (userInput > 8000)
           {
               throw new IOException();
           }
 
 	  //Greater than 0
-	  if (element <= 0)
+	  if (userInput <= 0)
           {
               throw new IOException();
           }
-      		System.out.print("Enter a value: ");
-      		userInput = scnr.nextInt();
-        	stack.stack_push(userInput);
-        	break;
+          stack.stack_push(userInput);
+          break;
           
     
     
