@@ -64,4 +64,23 @@ public class DefensiveStackUnitTests {
 		assertEquals(DS.stack_peek().compareTo(x), 0);
 		
 	}
+	
+	@Test
+	public void testPop()
+	{
+		DefensiveStack DS = new DefensiveStack();
+		DS.stack_push(1);
+		DS.stack_push(2);
+		DS.stack_push(3);
+		DS.stack_push(4);
+		DS.stack_push(5);
+		
+		assertEquals(DS.stack_pop().compareTo(5), 0);
+		assertEquals(DS.stack_pop().compareTo(4), 0);
+		assertEquals(DS.stack_pop().compareTo(3), 0);
+		assertEquals(DS.stack_pop().compareTo(2), 0);
+		assertEquals(DS.stack_pop().compareTo(1), 0);
+		
+		assertEquals(DS.stack_pop(), null);
+	}
 }
