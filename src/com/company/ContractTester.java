@@ -67,6 +67,7 @@ public class ContractTester
       }      
     }
     stack.stack_print();    
+    scnr.close();
   }
   
 }
