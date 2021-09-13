@@ -1,6 +1,10 @@
 package com.company;
 
 import java.util.Stack;
+import java.util.EmptyStackException;
+import java.io.IOException;
+
+
 
 public class ContractStack{
   
@@ -18,40 +22,14 @@ public class ContractStack{
   
   public void stack_push(int element)
   {
-	  /*
-    //Need to check if preconditions are met
-    //Element to push is even
-    if (element % 2 != 0)
-    {
-      //System.out.println("This does not meet the precondition");
-      System.exit(0);
-    }
-   
-    //Less than equal to 8000
-    if (element > 8000)
-    {
-      //System.out.println("This does not meet the precondition");
-      System.exit(0);
-    }
-    */ 
-	  
-    //Greater than 0
-	if (element <= 0)
-    {
-      //System.out.println("This does not meet the precondition");
-      System.exit(0);
-    }
     
-    //Post Condition
-    //The stack doesn't go over size
-    if (stack.size() > CAPACITY)
-    {
-      //Can not push into stack, stack at max capacity
-      //System.out.println("Stack at Max Capacity");
-      System.exit(0);
-    }
     stack.push(element);
     
+    if (stack.size() > CAPACITY)
+    {
+      stack.pop();
+      throw new IOException();
+    }
     
     
   }
@@ -60,13 +38,10 @@ public class ContractStack{
   //Option to pop top of stack
   public void stack_pop()
   {
-    //If the stack is empty kill program
+    //If the stack is empty impossible to pop
     if (stack.size() <= 0)
     {
-      
-      //System.out.println("The stack is empty");
-      System.exit(0);
-      
+     	throw new EmptyStackException(); 
     }
     
     stack.pop();
@@ -77,10 +52,10 @@ public class ContractStack{
   //Peek top of the stack
   public int stack_peek()
   {
-    if (stack.size() <= 0) {
-      
-      //System.out.println("The stack is empty");
-      System.exit(0);
+    //stack is empty cant peek
+    if (stack.size() <= 0) 
+    {
+      throw new EmptyStackException();
     }
     
     return stack.peek();
@@ -103,14 +78,19 @@ public class ContractStack{
     System.out.println(stack);
     
   }
+  
+  
   public boolean isFull()
   {
-	  if(stack.size() >= CAPACITY)
-	  {
-		  return true;
-	  }
-	  return false;
+  	if(stack.size() >= CAPACITY)
+	{
+		return true;
+	}
+	return false;
   }
+  
+  
+  
   public boolean isEmpty()
   {
 	  if(stack.size() == 0)
