@@ -55,8 +55,8 @@ public class ContractTester
               throw new IOException();
           }
 
-	        //Greater than 0
-	        if (element <= 0)
+	  //Greater than 0
+	  if (element <= 0)
           {
               throw new IOException();
           }
