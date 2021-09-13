@@ -11,7 +11,7 @@ public class DefensiveStackUnitTests {
 	public void testEmpty()
 	{
 		DefensiveStack DS = new DefensiveStack();
-		assertEquals(DS.stack_peek() == -1, true);
+		assertEquals(DS.stack_peek() == null, true);
 		assertEquals(DS.isFull(), false);
 	}
 	
@@ -38,30 +38,30 @@ public class DefensiveStackUnitTests {
 	public void  testPeek()
 	{
 		DefensiveStack DS = new DefensiveStack();
-		assertEquals(DS.stack_peek(), -1);
+		assertEquals(DS.stack_peek(), null);
 		
 		int x;
 		
 		//could replace assign with random number
 		x = 2;
 		DS.stack_push(x);
-		assertEquals(DS.stack_peek(), x);
+		assertEquals(DS.stack_peek().compareTo(x), 0);
 		
 		x = 3;
 		DS.stack_push(x);
-		assertEquals(DS.stack_peek(), x);
+		assertEquals(DS.stack_peek().compareTo(x), 0);
 		
 		x = 4;
 		DS.stack_push(x);
-		assertEquals(DS.stack_peek(), x);
+		assertEquals(DS.stack_peek().compareTo(x), 0);
 		
 		x = 5;
 		DS.stack_push(x);
-		assertEquals(DS.stack_peek(), x);
+		assertEquals(DS.stack_peek().compareTo(x), 0);
 		
 		x = 6;
 		DS.stack_push(x);
-		assertEquals(DS.stack_peek(), x);
+		assertEquals(DS.stack_peek().compareTo(x), 0);
 		
 	}
 }
