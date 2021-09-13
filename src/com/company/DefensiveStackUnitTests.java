@@ -11,8 +11,8 @@ public class DefensiveStackUnitTests {
 	public void testEmpty()
 	{
 		DefensiveStack DS = new DefensiveStack();
-		assertEquals(DS.stack_peek() == null, true);
-		assertEquals(DS.isFull(), false);
+		assertEquals(true, DS.stack_peek() == null);
+		assertEquals(false, DS.isFull());
 	}
 	
 	//Testing isFull method
@@ -21,49 +21,86 @@ public class DefensiveStackUnitTests {
 	{
 		DefensiveStack DS = new DefensiveStack();
 		DS.stack_push(1);
-		assertEquals(DS.isFull(), false);
+		assertEquals(false,DS.isFull());
 		DS.stack_push(1);
-		assertEquals(DS.isFull(), false);
+		assertEquals(false,DS.isFull());
 		DS.stack_push(1);
-		assertEquals(DS.isFull(), false);
+		assertEquals(false,DS.isFull());
 		DS.stack_push(1);
-		assertEquals(DS.isFull(), false);
+		assertEquals(false, DS.isFull());
 		DS.stack_push(1);
 		
 		//Stack should be full
-		assertEquals(DS.isFull(), true);
+		assertEquals(true, DS.isFull());
 	}
-	
-	@Test
-	public void  testPeek()
-	{
-		DefensiveStack DS = new DefensiveStack();
-		assertEquals(DS.stack_peek(), null);
-		
-		int x;
-		
-		//could replace assign with random number
-		x = 2;
-		DS.stack_push(x);
-		assertEquals(DS.stack_peek().compareTo(x), 0);
-		
-		x = 3;
-		DS.stack_push(x);
-		assertEquals(DS.stack_peek().compareTo(x), 0);
-		
-		x = 4;
-		DS.stack_push(x);
-		assertEquals(DS.stack_peek().compareTo(x), 0);
-		
-		x = 5;
-		DS.stack_push(x);
-		assertEquals(DS.stack_peek().compareTo(x), 0);
-		
-		x = 6;
-		DS.stack_push(x);
-		assertEquals(DS.stack_peek().compareTo(x), 0);
-		
-	}
+
+    @Test
+    public void  testPeek()
+    {
+        DefensiveStack DS = new DefensiveStack();
+        assertEquals(DS.stack_peek(), null);
+
+        int x;
+
+        //could replace assign with random number
+        x = 2;
+        DS.stack_push(x);
+        assertEquals(0, DS.stack_peek().compareTo(x));
+
+        x = 3;
+        DS.stack_push(x);
+        assertEquals(0, DS.stack_peek().compareTo(x));
+
+        x = 4;
+        DS.stack_push(x);
+        assertEquals(0, DS.stack_peek().compareTo(x));
+
+        x = 5;
+        DS.stack_push(x);
+        assertEquals(0, DS.stack_peek().compareTo(x));
+
+        x = 6;
+        DS.stack_push(x);
+        assertEquals(0, DS.stack_peek().compareTo(x));
+
+    }
+
+    @Test
+    public void testSearch() {
+        DefensiveStack DS = new DefensiveStack();
+        int position;
+
+        DS.stack_push(1);
+
+        // newly inserted value 1 should be at first position
+        position = DS.stack_search(1);
+        assertEquals(1, position);
+
+        DS.stack_push(2);
+
+        // value 1 should now be in second position
+        position = DS.stack_search(1);
+        assertEquals(2, position);
+
+        // newly inserted value 2 should be at first position
+        position = DS.stack_search(2);
+        assertEquals(1, position);
+
+        DS.stack_push(3);
+
+        // value 1 should now be in third position
+        position = DS.stack_search(1);
+        assertEquals(3, position);
+
+        // value 2 should now be in second position
+        position = DS.stack_search(2);
+        assertEquals(2, position);
+
+        // newly inserted value 3 should be at first position
+        position = DS.stack_search(3);
+        assertEquals(1, position);
+
+    }
 	
 	@Test
 	public void testPop()
@@ -75,12 +112,12 @@ public class DefensiveStackUnitTests {
 		DS.stack_push(4);
 		DS.stack_push(5);
 		
-		assertEquals(DS.stack_pop().compareTo(5), 0);
-		assertEquals(DS.stack_pop().compareTo(4), 0);
-		assertEquals(DS.stack_pop().compareTo(3), 0);
-		assertEquals(DS.stack_pop().compareTo(2), 0);
-		assertEquals(DS.stack_pop().compareTo(1), 0);
+		assertEquals(0, DS.stack_pop().compareTo(5));
+		assertEquals(0, DS.stack_pop().compareTo(4));
+		assertEquals(0, DS.stack_pop().compareTo(3));
+		assertEquals(0, DS.stack_pop().compareTo(2));
+		assertEquals(0, DS.stack_pop().compareTo(1));
 		
-		assertEquals(DS.stack_pop(), null);
+		assertEquals(null, DS.stack_pop());
 	}
 }
