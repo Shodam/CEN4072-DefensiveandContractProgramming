@@ -99,12 +99,12 @@ public class ContractTester
     
     
         case 7:
-          stack.isFull();
-    
+          System.out.println(stack.isFull());
+          break;
     
         case 8:
-          stack.isEmpty();
-    
+          System.out.println(stack.isEmpty());
+          break;
     
     
       	default:
