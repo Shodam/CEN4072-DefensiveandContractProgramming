@@ -6,7 +6,7 @@ import java.io.IOException;
 public class ContractTester
 {
   
-  public static void main (String[] args)
+  public static void main (String[] args) throws IOException
   {
     ContractStack stack = new ContractStack();
     Scanner scnr = new Scanner(System.in);
@@ -48,7 +48,7 @@ public class ContractTester
           //Need to check if preconditions are met
           //Element to push is even
           if (userInput % 2 != 0)
-          }
+          {
               throw new IOException();
           }
           //Less than equal to 8000
