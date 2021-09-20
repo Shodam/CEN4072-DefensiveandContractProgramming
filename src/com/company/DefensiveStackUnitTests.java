@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class DefensiveStackUnitTests {
 	
+	//Test Case #001
 	//testing isEmpty method (stack_peek)
 	@Test
 	public void testEmpty()
@@ -15,6 +16,7 @@ public class DefensiveStackUnitTests {
 		assertEquals(false, DS.isFull());
 	}
 	
+	//Test Case #002
 	//Testing isFull method
 	@Test
 	public void testFull()
@@ -34,6 +36,7 @@ public class DefensiveStackUnitTests {
 		assertEquals(true, DS.isFull());
 	}
 
+	//Test Case #003
     @Test
     public void  testPeek()
     {
@@ -65,6 +68,7 @@ public class DefensiveStackUnitTests {
 
     }
 
+	//Test Case #004
     @Test
     public void testSearch() {
         DefensiveStack DS = new DefensiveStack();
@@ -101,7 +105,7 @@ public class DefensiveStackUnitTests {
         assertEquals(1, position);
 
     }
-	
+	//Test Case #005
 	@Test
 	public void testPop()
 	{

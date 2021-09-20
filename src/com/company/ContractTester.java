@@ -43,7 +43,7 @@ public class ContractTester
           
           
       	case 2:
-	  System.out.print("Enter a value: ");
+	        System.out.print("Enter a value: ");
       	  userInput = scnr.nextInt();	      
           //Need to check if preconditions are met
           //Element to push is even
@@ -57,8 +57,8 @@ public class ContractTester
               throw new IOException();
           }
 
-	  //Greater than 0
-	  if (userInput <= 0)
+	        //Greater than 0
+	        if (userInput <= 0)
           {
               throw new IOException();
           }
@@ -99,12 +99,12 @@ public class ContractTester
     
     
         case 7:
-          stack.isFull();
-    
+          System.out.println(stack.isFull());
+          break;
     
         case 8:
-          stack.isEmpty();
-    
+          System.out.println(stack.isEmpty());
+          break;
     
     
       	default:
