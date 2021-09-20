@@ -12,6 +12,7 @@ import java.io.IOException;
 
 public class ContractStackUnitTests {
 	
+	//Test Case #010
 	//testing isEmpty method (stack_peek)
 	@Test
 	public void testEmpty()
@@ -21,6 +22,7 @@ public class ContractStackUnitTests {
 		assertEquals(CS.isFull(), false);
 	}
 	
+	//Test Case #020
 	//Testing isFull method
 	@Test
 	public void testFull() throws IOException
@@ -40,6 +42,7 @@ public class ContractStackUnitTests {
 		assertTrue(CS.isFull());
 	}
 	
+	//Test Case #030
 	@Test
 	public void  testPeekAndPush() throws IOException
 	{
@@ -69,6 +72,7 @@ public class ContractStackUnitTests {
 		assertEquals(x, CS.stack_peek());
 	}
 	
+	//Test Case #040
 	@Test
 	public void testPop() throws IOException
 	{
@@ -89,6 +93,7 @@ public class ContractStackUnitTests {
 		assertEquals(true, CS.isEmpty());
 	}
 	
+	//Test Case #050
 	@Test
 	public void TestExceptions() throws IOException
 	{
@@ -111,7 +116,7 @@ public class ContractStackUnitTests {
 		});
 		 
 	}
-	
+	//Test Case #060
 	@Test
     public void testSearch() {
         DefensiveStack DS = new DefensiveStack();
