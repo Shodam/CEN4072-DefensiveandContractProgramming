@@ -43,6 +43,7 @@ public class ContractStackUnitTests {
 	}
 	
 	//Test Case #030
+	//Testing Peek() & Push()
 	@Test
 	public void  testPeekAndPush() throws IOException
 	{
@@ -73,6 +74,7 @@ public class ContractStackUnitTests {
 	}
 	
 	//Test Case #040
+	//Testing Pop()
 	@Test
 	public void testPop() throws IOException
 	{
@@ -94,6 +96,7 @@ public class ContractStackUnitTests {
 	}
 	
 	//Test Case #050
+	//Testing Exceptions
 	@Test
 	public void TestExceptions() throws IOException
 	{
@@ -117,6 +120,7 @@ public class ContractStackUnitTests {
 		 
 	}
 	//Test Case #060
+	//Testing Search()
 	@Test
     public void testSearch() {
         DefensiveStack DS = new DefensiveStack();
