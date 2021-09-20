@@ -37,6 +37,7 @@ public class DefensiveStackUnitTests {
 	}
 
 	//Test Case #003
+	//Testing Peek()
     @Test
     public void  testPeek()
     {
@@ -69,6 +70,7 @@ public class DefensiveStackUnitTests {
     }
 
 	//Test Case #004
+	//Testing Search()
     @Test
     public void testSearch() {
         DefensiveStack DS = new DefensiveStack();
@@ -106,6 +108,7 @@ public class DefensiveStackUnitTests {
 
     }
 	//Test Case #005
+	//Testing Pop()
 	@Test
 	public void testPop()
 	{
